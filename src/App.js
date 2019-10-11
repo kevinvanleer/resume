@@ -199,7 +199,7 @@ function App() {
         >
           Kevin was responsible for development and maintenance of the Conduce
           SAAS platform. He owned the product roadmap and backlog. Kevin led the
-          company out of deep technical debt, improved quality, and delivery
+          company out of deep technical debt, improved quality, and delivered
           value to customers. Kevin also functioned as the facilitator of the
           software development team and lead user interface designer. He also
           wrote code in JavaScript, Python, and Go.
@@ -212,27 +212,29 @@ function App() {
           product capabilities. Kevin developed an application to deliver
           visualization features that were not part of the platform offering. He
           also developed a time control feature that was later incorporated into
-          the softare platform. He also worked with company leadership bring
-          about positive change in product development practices.
+          the softare platform. In addition, Kevin worked with company
+          leadership bring about positive change in product development
+          practices.
         </Job>
       </Flexbox>
       <Flexbox element={Section} flexDirection="column">
         <Company name="Boeing" timespan="2004-2014" />
         <Job title="Software Engineer" timespan="2004-2014">
           Kevin spearheaded development of Voice Communication System, a
-          peer-to-peer radio simulation and voice communications platform. He
-          led the development team and something overall product design. Kevin
-          and his team proved value in a matter of months, offsetting
-          significant installation costs by replacing a commercial-off-the-shelf
-          system. Kevin went on to deploy the solution in several facilities,
-          reducing setup and maintenance costs.
+          peer-to-peer radio simulation and voice communications software suite.
+          He led the development team and was responsible for overall product
+          design. Kevin and his team proved value in a matter of months,
+          offsetting significant installation costs by replacing a
+          commercial-off-the-shelf system. Kevin went on to deploy the solution
+          in several facilities, reducing setup and maintenance costs for
+          simulation events.
         </Job>
       </Flexbox>
       <Flexbox element={Section} flexDirection="column">
         <Heading>Volunteer</Heading>
         <Job title="Soccer coach" timespan="2018-present">
           Work with a great group of 2nd and 3rd grade girls. Teaching them the
-          value of teamwork.
+          value of teamwork and fair play.
         </Job>
         <Job title="FIRST LEGO League coach" timespan="2015-2016">
           Facilitated a team of 10 hardworking 5th (and then 6th) graders in
