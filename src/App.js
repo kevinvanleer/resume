@@ -22,7 +22,7 @@ const Text = styled.div`
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
   @media print {
-    font-size: 10pt;
+    font-size: 12pt;
   }
 `;
 const Link = styled.a`
@@ -123,7 +123,7 @@ const Section = styled(Text)`
   }
 `;
 const Document = styled.body`
-  background: #222;
+  background-color: #222;
   color: ${textColor};
   height: 100%;
   min-height: 100vh;
@@ -131,13 +131,14 @@ const Document = styled.body`
   overflow-x: hidden;
   @page {
     size: letter portrait;
-    margin: 0.5in 0.25in;
+    margin: 34pt 0pt;
   }
   @media print {
     a {
       color: #000;
     }
     color: #000;
+    background-color: #fff;
   }
 `;
 
