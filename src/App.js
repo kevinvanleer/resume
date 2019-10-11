@@ -1,30 +1,81 @@
 import React from 'react';
 import styled from 'styled-components';
 import Flexbox from 'flexbox-react';
-import SvgConduce from './SvgConduce.js';
 import * as text from './text.json';
 import './font.css';
 
-const textColor = '#ccc';
+const textColor = '#cecece';
+const titleColor = '#082678';
+const headlineColor = '#333';
+const leftMargin = '34pt';
+const rightMargin = leftMargin;
+const topMargin = '0px';
+
+const PageBreak = styled.div`
+  @media print {
+    page-break-after: always;
+    break-after: page;
+  }
+`;
 const Text = styled.div`
   display: flex;
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
 `;
-const Title = styled(Text)`
-  height: 3em;
-  align-items: center;
-  background-color: #082678;
-  padding-left: 32px;
+const Link = styled.a`
+  color: ${textColor};
+`;
+const Title = styled(({ className, name, email, phone }) => {
+  return (
+    <Flexbox flexDirection="row" className={className}>
+      <Flexbox flexDirection="column" justifyContent="center">
+        {name}
+        <Flexbox element={Body} height="1em">
+          <Link href={`mailto:${email}`}>{email}</Link>
+        </Flexbox>
+      </Flexbox>
+      <Flexbox flexGrow={1} />
+      <Flexbox
+        flexDirection="column"
+        justifyContent="flex-start"
+        alignItems="flex-end"
+      >
+        <Flexbox height="10pt" />
+        <Body>283 Stonehenge Drive</Body>
+        <Body>Washington, MO 63090</Body>
+        <Flexbox height="5pt" />
+        <Body>{phone}</Body>
+        <Flexbox flexGrow={1} minHeight="16pt" />
+        <Body>
+          <Link href="https://github.com/trukvl">
+            https://github.com/trukvl
+          </Link>
+        </Body>
+        <Body>
+          <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+            https://www.linkedin.com/in/kevin-vanleer/
+          </Link>
+        </Body>
+        <Flexbox height="12pt" />
+      </Flexbox>
+    </Flexbox>
+  );
+})`
+  background-color: ${titleColor};
+  padding-left: ${leftMargin};
+  padding-right ${rightMargin};
+  padding-top: ${topMargin};
   font-size: 48pt;
   font-family: 'Dosis', sans-serif;
+  white-space: nowrap;
 `;
 const Headline = styled(Text)`
   margin-bottom: 1em;
-  background-color: #333;
+  background-color: ${headlineColor};
   min-height: 3em;
   align-items: center;
-  padding-left: 32px;
+  padding-left: ${leftMargin};
+  padding-right ${rightMargin};
   font-size: 20pt;
   line-height: 22pt;
 `;
@@ -45,7 +96,8 @@ const Institution = styled(Text)`
 `;
 const Section = styled(Text)`
   margin-bottom: 1em;
-  padding-left: 32px;
+  padding-left: ${leftMargin};
+  padding-right ${rightMargin};
 `;
 const Document = styled.body`
   background: #222;
@@ -53,6 +105,11 @@ const Document = styled.body`
   height: 100%;
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+  @page {
+    size: letter portrait;
+    margin: 34pt 0pt;
+  }
 `;
 
 const Company = ({ name, timespan }) => (
@@ -85,30 +142,24 @@ const Degree = ({ school, degree, year }) => (
   </Flexbox>
 );
 
-/*<SvgConduce
-            fill={textColor}
-            stroke={textColor}
-            height="80px"
-            width="170px"
-          />*/
 function App() {
   return (
     <Document>
       <Flexbox flexDirection="column">
-        <Title>{text.title}</Title>
+        <Title
+          name={text.title}
+          email="kevin.vanleer@gmail.com"
+          phone="314-323-2294"
+        />
         <Headline>{text.headline}</Headline>
         <Flexbox element={Section} flexDirection="column">
           <Body>
             Kevin spent the past 2 years leading the product development effort
-            at Conduce, and cloud deployed data visualization SaaS. He
-            diligently focused on empowering users, enabling them to build
-            visualizations and see their data as it happened in time and space,
-            recognize patterns, and perform analysis in ways that dashboards and
-            analytics tools cannot. There I am the Director of Product
-            Development where it is my mission to build and execute a product
-            roadmap to develop a software platform that empowers users to see
-            their business operations through data visualization in ways they
-            never thought possible.
+            at Conduce, a cloud deployed data visualization SaaS. He diligently
+            focused on empowering users, enabling them to build visualizations
+            and see their business operations through data, as it happened in
+            time and space, recognize patterns, and perform analysis in ways
+            they never thought possible.
           </Body>
         </Flexbox>
         <Flexbox element={Section} flexDirection="column">
@@ -118,9 +169,11 @@ function App() {
             timespan="Sep 2017 - Oct 2019"
           >
             Kevin was responsible for development and maintenance of the Conduce
-            SAAS platform. He maintained the product roadmap and backlog. Kevin
-            also functioned as the facilitator of the software development team
-            and lead user interface designer.
+            SAAS platform. He owned the product roadmap and backlog. Kevin led
+            the company out of deep technical debt, improved quality, and
+            delivery value to customers. Kevin also functioned as the
+            facilitator of the software development team and lead user interface
+            designer. He also wrote code in JavaScript, Python, and Go.
           </Job>
           <Job title="Senior Software Engineer" timespan="Dec 2014 - Sep 2017">
             Kevin served both as a delivery engineer and a platform engineer. He
@@ -128,18 +181,21 @@ function App() {
             solutions for customers to help them reach desired business
             outcomes. He met regularly with customers to gather requirements and
             demonstrate product capabilities. Kevin developed an application to
-            deliver features that were not part of the platform offering. He
-            also developed a time control feature that was later incorporated
-            into the softare platform.
+            deliver visualization features that were not part of the platform
+            offering. He also developed a time control feature that was later
+            incorporated into the softare platform. He also worked with company
+            leadership bring about positive change in product development
+            practices.
           </Job>
         </Flexbox>
+        <PageBreak />
         <Flexbox element={Section} flexDirection="column">
           <Company name="Boeing" timespan="2004-2014" />
           <Job title="Software Engineer" timespan="2004-2014">
             Kevin spearheaded development of Voice Communication System, a
             peer-to-peer radio simulation and voice communications platform. He
-            lead the development team and something overall product design.
-            Kevin and his team proved value in a matter of months, offsetting
+            led the development team and something overall product design. Kevin
+            and his team proved value in a matter of months, offsetting
             significant installation costs by replacing a
             commercial-off-the-shelf system. Kevin went on to deploy the
             solution in several facilities, reducing setup and maintenance
