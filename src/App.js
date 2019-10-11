@@ -50,8 +50,8 @@ const Title = styled(({ className, name, email, phone }) => {
         <Body>{phone}</Body>
         <Flexbox flexGrow={1} minHeight="16pt" />
         <Body>
-          <Link href="https://github.com/trukvl">
-            https://github.com/trukvl
+          <Link href="https://github.com/kevinvanleer">
+            https://github.com/kevinvanleer
           </Link>
         </Body>
         <Body>
