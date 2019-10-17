@@ -6,10 +6,13 @@ import './font.css';
 
 const textColor = '#cecece';
 const titleColor = '#082678';
-const headlineColor = '#333';
+const headlineColor = '#202123';
+const backgroundColor = '#2b2f36';
 const leftMargin = '34pt';
 const rightMargin = leftMargin;
 const topMargin = '0px';
+
+const centerJustify = true;
 
 const PageBreak = styled.div`
   @media print {
@@ -25,70 +28,17 @@ const Text = styled.div`
     font-size: 12pt;
   }
 `;
+const Section = styled.div`
+  padding-left: ${leftMargin};
+  padding-right ${rightMargin};
+  @media print {
+    break-inside: avoid;
+  }
+  max-width: 1080px;
+  width: calc(100% - ${leftMargin} - ${rightMargin});
+`;
 const Link = styled.a`
   color: ${textColor};
-`;
-const Title = styled(({ className, name, email, phone }) => {
-  return (
-    <Flexbox flexDirection="row" className={className}>
-      <Flexbox flexDirection="column" justifyContent="center">
-        {name}
-        <Flexbox element={Body} height="1em">
-          <Link href={`mailto:${email}`}>{email}</Link>
-        </Flexbox>
-      </Flexbox>
-      <Flexbox flexGrow={1} />
-      <Flexbox
-        flexDirection="column"
-        justifyContent="flex-start"
-        alignItems="flex-end"
-      >
-        <Flexbox height="10pt" />
-        <Body>283 Stonehenge Drive</Body>
-        <Body>Washington, MO 63090</Body>
-        <Flexbox height="5pt" />
-        <Body>{phone}</Body>
-        <Flexbox flexGrow={1} minHeight="16pt" />
-        <Body>
-          <Link href="https://github.com/kevinvanleer">
-            https://github.com/kevinvanleer
-          </Link>
-        </Body>
-        <Body>
-          <Link href="https://www.linkedin.com/in/kevin-vanleer/">
-            https://www.linkedin.com/in/kevin-vanleer/
-          </Link>
-        </Body>
-        <Flexbox height="12pt" />
-      </Flexbox>
-    </Flexbox>
-  );
-})`
-  background-color: ${titleColor};
-  padding-left: ${leftMargin};
-  padding-right ${rightMargin};
-  padding-top: ${topMargin};
-  font-size: 48pt;
-  font-family: 'Dosis', sans-serif;
-  white-space: nowrap;
-  @media print {
-    font-size: 42pt;
-  }
-`;
-const Headline = styled(Text)`
-  margin-bottom: 1em;
-  background-color: ${headlineColor};
-  min-height: 3em;
-  align-items: center;
-  padding-left: ${leftMargin};
-  padding-right ${rightMargin};
-  font-size: 20pt;
-  line-height: 22pt;
-  @media print {
-    font-size: 18pt;
-    line-height: 18pt;
-    margin-bottom: 0;
-  }
 `;
 const Heading = styled(Text)`
   font-size: 24pt;
@@ -114,21 +64,12 @@ const Institution = styled(Text)`
     font-size: 16pt;
   }
 `;
-const Section = styled(Text)`
-  margin-bottom: 1em;
-  padding-left: ${leftMargin};
-  padding-right ${rightMargin};
-  @media print {
-    break-inside: avoid;
-  }
-`;
-const Document = styled.body`
-  background-color: #222;
+const Document = styled.div`
+  display: flex;
+  flex-direction: column;
+  ${centerJustify && 'align-items: center;'}
+  background-color: ${backgroundColor};
   color: ${textColor};
-  height: 100%;
-  min-height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
   @page {
     size: letter portrait;
     margin: 34pt 0pt;
@@ -139,6 +80,85 @@ const Document = styled.body`
     }
     color: #000;
     background-color: #fff;
+  }
+  font-family: 'Cairo', sans-serif;
+  font-size: 14pt;
+  width: 100%;
+`;
+
+const Name = styled(Text)`
+  font-size: 48pt;
+  font-family: 'Dosis', sans-serif;
+`;
+const Title = styled(({ className, name, email, phone }) => {
+  return (
+    <Flexbox className={className}>
+      <Flexbox flexGrow={centerJustify ? 1 : 0} />
+      <Flexbox element={Section} flexDirection="row" className={className}>
+        <Flexbox flexDirection="column" justifyContent="center">
+          <Name>{name}</Name>
+          <Flexbox element={Body} height="1em">
+            <Link href={`mailto:${email}`}>{email}</Link>
+          </Flexbox>
+        </Flexbox>
+        <Flexbox flexGrow={1} />
+        <Flexbox
+          flexDirection="column"
+          justifyContent="flex-start"
+          alignItems="flex-end"
+        >
+          <Flexbox height="10pt" />
+          <Body>283 Stonehenge Drive</Body>
+          <Body>Washington, MO 63090</Body>
+          <Flexbox height="5pt" />
+          <Body>{phone}</Body>
+          <Flexbox flexGrow={1} minHeight="16pt" />
+          <Body>
+            <Link href="https://github.com/kevinvanleer">
+              https://github.com/kevinvanleer
+            </Link>
+          </Body>
+          <Body>
+            <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+              https://www.linkedin.com/in/kevin-vanleer/
+            </Link>
+          </Body>
+          <Flexbox height="12pt" />
+        </Flexbox>
+      </Flexbox>
+      <Flexbox flexGrow={1} />
+    </Flexbox>
+  );
+})`
+  width: 100%;
+  background-color: ${titleColor};
+  padding-top: ${topMargin};
+  white-space: nowrap;
+  @media print {
+    font-size: 42pt;
+  }
+`;
+const Headline = styled(({ className, children }) => (
+  <Flexbox className={className}>
+    <Flexbox flexGrow={centerJustify ? 1 : 0} />
+    <Flexbox element={Section} flexDirection="row">
+      {children}
+    </Flexbox>
+    <Flexbox flexGrow={1} />
+  </Flexbox>
+))`
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: ${headlineColor};
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 20pt;
+  line-height: 22pt;
+  @media print {
+    font-size: 18pt;
+    line-height: 18pt;
+    margin-bottom: 0;
   }
 `;
 
@@ -181,7 +201,7 @@ function App() {
         phone="314-323-2294"
       />
       <Headline>{text.headline}</Headline>
-      <Flexbox element={Section} flexDirection="column">
+      <Section>
         <Body>
           Kevin spent the past 2 years leading the product development effort at
           Conduce, a cloud deployed data visualization SaaS. He diligently
@@ -190,12 +210,14 @@ function App() {
           space, recognize patterns, and perform analysis in ways they never
           thought possible.
         </Body>
-      </Flexbox>
-      <Flexbox element={Section} flexDirection="column">
+      </Section>
+      <Section>
         <Company name="Conduce" timespan="2014-2019" />
         <Job
           title="Director of Product Development"
           timespan="Sep 2017 - Oct 2019"
+          from="Sep 2017"
+          to="Oct 2019"
         >
           Kevin was responsible for development and maintenance of the Conduce
           SAAS platform. He owned the product roadmap and backlog. Kevin led the
@@ -216,8 +238,8 @@ function App() {
           leadership bring about positive change in product development
           practices.
         </Job>
-      </Flexbox>
-      <Flexbox element={Section} flexDirection="column">
+      </Section>
+      <Section>
         <Company name="Boeing" timespan="2004-2014" />
         <Job title="Software Engineer" timespan="2004-2014">
           Kevin spearheaded development of Voice Communication System, a
@@ -229,8 +251,8 @@ function App() {
           in several facilities, reducing setup and maintenance costs for
           simulation events.
         </Job>
-      </Flexbox>
-      <Flexbox element={Section} flexDirection="column">
+      </Section>
+      <Section>
         <Heading>Volunteer</Heading>
         <Job title="Soccer coach" timespan="2018-present">
           Work with a great group of 2nd and 3rd grade girls. Teaching them the
@@ -240,15 +262,15 @@ function App() {
           Facilitated a team of 10 hardworking 5th (and then 6th) graders in
           their pursuit to master the FIRST LEGO League challenge.
         </Job>
-      </Flexbox>
-      <Flexbox element={Section} flexDirection="column">
+      </Section>
+      <Section>
         <Heading>Education</Heading>
         <Degree
           school="Missouri University of Science and Technology"
           degree="Bachelor of Computer Engineering"
           year="2004"
         />
-      </Flexbox>
+      </Section>
     </Document>
   );
 }
