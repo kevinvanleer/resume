@@ -15,12 +15,6 @@ const topMargin = '0px';
 
 const centerJustify = true;
 
-const PageBreak = styled.div`
-  @media print {
-    page-break-after: always;
-    break-after: page;
-  }
-`;
 const Text = styled.div`
   display: flex;
   font-family: 'Cairo', sans-serif;
@@ -88,19 +82,29 @@ const Document = styled.div`
 `;
 
 const Name = styled(Text)`
-  font-size: ${props => props.fontSize};
+  font-size: 48pt;
+  font-family: 'Dosis', sans-serif;
+`;
+const ResponsiveName = styled(Text)`
+  font-size: 10vw;
   font-family: 'Dosis', sans-serif;
 `;
 const Title = styled(({ className, name, email, phone }) => {
   const isBigScreen = useMediaQuery({ minWidth: 825 });
+  const isPrint = useMediaQuery({ print: true });
+  const wideLayout = isBigScreen || isPrint;
   return (
     <Flexbox className={className}>
       <Flexbox flexGrow={centerJustify ? 1 : 0} />
       <Flexbox element={Section} flexDirection="row" className={className}>
         <Flexbox flexDirection="column" justifyContent="center">
           <Flexbox height="1em" />
-          <Name fontSize={isBigScreen ? '48pt' : '10vw'}>{name}</Name>
-          {isBigScreen ? (
+          {wideLayout ? (
+            <Name>{name}</Name>
+          ) : (
+            <ResponsiveName>{name}</ResponsiveName>
+          )}
+          {wideLayout ? (
             <Flexbox element={Body} height="1em">
               <Link href={`mailto:${email}`}>{email}</Link>
             </Flexbox>
@@ -112,22 +116,25 @@ const Title = styled(({ className, name, email, phone }) => {
               <Flexbox height="5pt" />
               <Body>{phone}</Body>
               <Flexbox flexGrow={1} minHeight="16pt" />
-              <Body>
-                <Link href="https://github.com/kevinvanleer">
-                  https://github.com/kevinvanleer
-                </Link>
-              </Body>
-              <Body>
-                <Link href="https://www.linkedin.com/in/kevin-vanleer/">
-                  https://www.linkedin.com/in/kevin-vanleer/
-                </Link>
-              </Body>
+              <Flexbox flexDirection="row">
+                <Body>
+                  <Link href="https://github.com/kevinvanleer">GitHub</Link>
+                </Body>
+                <Flexbox width="0.2ch" />
+                <Body>|</Body>
+                <Flexbox width="0.2ch" />
+                <Body>
+                  <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+                    LinkedIn
+                  </Link>
+                </Body>
+              </Flexbox>
             </Flexbox>
           )}
           <Flexbox height="1em" />
         </Flexbox>
         <Flexbox flexGrow={1} />
-        {isBigScreen && (
+        {wideLayout && (
           <Flexbox
             flexDirection="column"
             justifyContent="flex-start"
@@ -240,6 +247,7 @@ function App() {
           thought possible.
         </Body>
       </Section>
+      <Flexbox height="1em" />
       <Section>
         <Company name="Conduce" timespan="2014-2019" />
         <Job
