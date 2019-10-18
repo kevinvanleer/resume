@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Flexbox from 'flexbox-react';
+import { useMediaQuery } from 'react-responsive';
 import * as text from './text.json';
 import './font.css';
 
@@ -87,44 +88,70 @@ const Document = styled.div`
 `;
 
 const Name = styled(Text)`
-  font-size: 48pt;
+  font-size: ${props => props.fontSize};
   font-family: 'Dosis', sans-serif;
 `;
 const Title = styled(({ className, name, email, phone }) => {
+  const isBigScreen = useMediaQuery({ minWidth: 825 });
   return (
     <Flexbox className={className}>
       <Flexbox flexGrow={centerJustify ? 1 : 0} />
       <Flexbox element={Section} flexDirection="row" className={className}>
         <Flexbox flexDirection="column" justifyContent="center">
-          <Name>{name}</Name>
-          <Flexbox element={Body} height="1em">
-            <Link href={`mailto:${email}`}>{email}</Link>
-          </Flexbox>
+          <Flexbox height="1em" />
+          <Name fontSize={isBigScreen ? '48pt' : '10vw'}>{name}</Name>
+          {isBigScreen ? (
+            <Flexbox element={Body} height="1em">
+              <Link href={`mailto:${email}`}>{email}</Link>
+            </Flexbox>
+          ) : (
+            <Flexbox flexDirection="column">
+              <Flexbox element={Body} height="1em" flexDirection="column">
+                <Link href={`mailto:${email}`}>{email}</Link>
+              </Flexbox>
+              <Flexbox height="5pt" />
+              <Body>{phone}</Body>
+              <Flexbox flexGrow={1} minHeight="16pt" />
+              <Body>
+                <Link href="https://github.com/kevinvanleer">
+                  https://github.com/kevinvanleer
+                </Link>
+              </Body>
+              <Body>
+                <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+                  https://www.linkedin.com/in/kevin-vanleer/
+                </Link>
+              </Body>
+            </Flexbox>
+          )}
+          <Flexbox height="1em" />
         </Flexbox>
         <Flexbox flexGrow={1} />
-        <Flexbox
-          flexDirection="column"
-          justifyContent="flex-start"
-          alignItems="flex-end"
-        >
-          <Flexbox height="10pt" />
-          <Body>283 Stonehenge Drive</Body>
-          <Body>Washington, MO 63090</Body>
-          <Flexbox height="5pt" />
-          <Body>{phone}</Body>
-          <Flexbox flexGrow={1} minHeight="16pt" />
-          <Body>
-            <Link href="https://github.com/kevinvanleer">
-              https://github.com/kevinvanleer
-            </Link>
-          </Body>
-          <Body>
-            <Link href="https://www.linkedin.com/in/kevin-vanleer/">
-              https://www.linkedin.com/in/kevin-vanleer/
-            </Link>
-          </Body>
-          <Flexbox height="12pt" />
-        </Flexbox>
+        {isBigScreen && (
+          <Flexbox
+            flexDirection="column"
+            justifyContent="flex-start"
+            alignItems="flex-end"
+          >
+            <Flexbox height="10pt" />
+            <Body>283 Stonehenge Drive</Body>
+            <Body>Washington, MO 63090</Body>
+            <Flexbox height="5pt" />
+            <Body>{phone}</Body>
+            <Flexbox flexGrow={1} minHeight="16pt" />
+            <Body>
+              <Link href="https://github.com/kevinvanleer">
+                https://github.com/kevinvanleer
+              </Link>
+            </Body>
+            <Body>
+              <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+                https://www.linkedin.com/in/kevin-vanleer/
+              </Link>
+            </Body>
+            <Flexbox height="12pt" />
+          </Flexbox>
+        )}
       </Flexbox>
       <Flexbox flexGrow={1} />
     </Flexbox>
@@ -163,23 +190,25 @@ const Headline = styled(({ className, children }) => (
 `;
 
 const Company = ({ name, timespan }) => (
-  <Flexbox alignItems="baseline">
+  <Flexbox alignItems="baseline" flexWrap="wrap">
     <Heading>{name}</Heading>
     <Flexbox width="1em" />
     <Chronology>{timespan}</Chronology>
   </Flexbox>
 );
-const Job = ({ title, timespan, children }) => (
-  <Flexbox flexDirection="column">
-    <Flexbox alignItems="baseline">
-      <JobTitle>{title}</JobTitle>
-      <Flexbox width="1em" />
-      <Chronology>{timespan}</Chronology>
+const Job = ({ title, timespan, children }) => {
+  return (
+    <Flexbox flexDirection="column">
+      <Flexbox alignItems="baseline" flexDirection="row" flexWrap="wrap">
+        <JobTitle>{title}</JobTitle>
+        <Flexbox width="1em" />
+        <Chronology>{timespan}</Chronology>
+      </Flexbox>
+      <Body>{children}</Body>
+      <Flexbox height="1em" />
     </Flexbox>
-    <Body>{children}</Body>
-    <Flexbox height="1em" />
-  </Flexbox>
-);
+  );
+};
 const Degree = ({ school, degree, year }) => (
   <Flexbox flexDirection="column">
     <Institution>{school}</Institution>
