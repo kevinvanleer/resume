@@ -35,6 +35,8 @@ export const Text = styled(Flexbox)`
   font-size: 14pt;
   @media print {
     font-size: 12pt;
+    color: black;
+  }
   }
 `;
 
@@ -44,6 +46,8 @@ export const TitleSection = styled(Flexbox)`
   @media print {
     break-inside: avoid;
     page-break-inside: avoid;
+    color: black;
+    background-color: white;
   }
   max-width: 1080px;
   width: calc(100% - ${leftMargin} - ${rightMargin});
@@ -221,6 +225,7 @@ export const Title = styled(({ className, name, email, phone }) => {
   white-space: nowrap;
   @media print {
     background-color: white;
+    color: black;
   }
 `;
 export const Headline = styled(({ className, children }) => (
@@ -241,6 +246,7 @@ export const Headline = styled(({ className, children }) => (
   line-height: 22pt;
   @media print {
     background-color: white;
+    color: black;
     font-size: 18pt;
     line-height: 18pt;
     margin-bottom: 0;
