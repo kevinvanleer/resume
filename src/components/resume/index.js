@@ -9,9 +9,22 @@ import Flexbox from '../layout/Flexbox.js';
 
 export const centerJustify = true;
 
+export const forestGreen = '#2C5F2D';
+export const mossGreen = '#97BC62FF';
+export const electricBlueLemonade = '#0063b2ff';
+export const aquamarine = '#9cc3d5ff';
+export const black = '#101820ff';
+export const blazingYellow = '#fee715ff';
+export const turkishSea = '#195190';
+export const silver = '#a2a2a1';
+export const themeColor1 = turkishSea;
+export const themeColor2 = silver;
+
 export const textColor = '#cecece';
-export const titleColor = '#8bc34a';
-export const headlineColor = '#5a9216';
+export const titleBackground = themeColor2;
+export const titleColor = themeColor1;
+export const headlineBackground = themeColor1;
+export const headlineColor = themeColor2;
 export const backgroundColor = '#2b2f36';
 export const leftMargin = '34pt';
 export const rightMargin = leftMargin;
@@ -57,7 +70,7 @@ Section.defaultProps = {
 };
 
 export const Link = styled.a`
-  color: #555;
+  color: ${props => props.color};
 `;
 export const Heading = styled(Text)`
   font-size: 24pt;
@@ -128,7 +141,9 @@ export const Title = styled(({ className, name, email, phone }) => {
           )}
           {wideLayout ? (
             <Body height="1em">
-              <Link href={`mailto:${email}`}>{email}</Link>
+              <Link color={titleColor} href={`mailto:${email}`}>
+                {email}
+              </Link>
             </Body>
           ) : (
             <Flexbox flexDirection="column">
@@ -140,13 +155,21 @@ export const Title = styled(({ className, name, email, phone }) => {
               <Flexbox flexGrow={1} minHeight="16pt" />
               <Flexbox flexDirection="row">
                 <Body>
-                  <Link href="https://github.com/kevinvanleer">GitHub</Link>
+                  <Link
+                    color={titleColor}
+                    href="https://github.com/kevinvanleer"
+                  >
+                    GitHub
+                  </Link>
                 </Body>
                 <Flexbox width="0.2ch" />
                 <Body>|</Body>
                 <Flexbox width="0.2ch" />
                 <Body>
-                  <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+                  <Link
+                    color={titleColor}
+                    href="https://www.linkedin.com/in/kevin-vanleer/"
+                  >
                     LinkedIn
                   </Link>
                 </Body>
@@ -169,12 +192,15 @@ export const Title = styled(({ className, name, email, phone }) => {
             <Body>{phone}</Body>
             <Flexbox flexGrow={1} minHeight="16pt" />
             <Body>
-              <Link href="https://github.com/kevinvanleer">
+              <Link color={titleColor} href="https://github.com/kevinvanleer">
                 https://github.com/kevinvanleer
               </Link>
             </Body>
             <Body>
-              <Link href="https://www.linkedin.com/in/kevin-vanleer/">
+              <Link
+                color={titleColor}
+                href="https://www.linkedin.com/in/kevin-vanleer/"
+              >
                 https://www.linkedin.com/in/kevin-vanleer/
               </Link>
             </Body>
@@ -186,9 +212,9 @@ export const Title = styled(({ className, name, email, phone }) => {
     </Flexbox>
   );
 })`
-  color: black;
+  color: ${titleColor};
   width: 100%;
-  background-color: ${titleColor};
+  background-color: ${titleBackground};
   padding-top: ${topMargin};
   white-space: nowrap;
   @media print {
@@ -202,10 +228,10 @@ export const Headline = styled(({ className, children }) => (
     <Flexbox flexGrow={1} />
   </Flexbox>
 ))`
-  color: black;
+  color: ${headlineColor};
   width: 100%;
   margin-bottom: 1em;
-  background-color: ${headlineColor};
+  background-color: ${headlineBackground};
   align-items: center;
   padding-top: 1em;
   padding-bottom: 1em;
