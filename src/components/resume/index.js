@@ -24,11 +24,29 @@ export const Text = styled(Flexbox)`
     font-size: 12pt;
   }
 `;
+
+export const TitleSection = styled(Flexbox)`
+  padding-left: ${leftMargin};
+  padding-right ${rightMargin};
+  @media print {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  max-width: 1080px;
+  width: calc(100% - ${leftMargin} - ${rightMargin});
+`;
+
+TitleSection.defaultProps = {
+  flexDirection: 'column',
+};
+
 export const Section = styled(Flexbox)`
   padding-left: ${leftMargin};
   padding-right ${rightMargin};
   @media print {
     break-inside: avoid;
+    page-break-inside: avoid;
+    display: block;
   }
   max-width: 1080px;
   width: calc(100% - ${leftMargin} - ${rightMargin});
@@ -65,22 +83,18 @@ export const Institution = styled(Text)`
     font-size: 16pt;
   }
 `;
-export const Document = styled.div`
-  display: flex;
+export const Document = styled(Flexbox)`
   flex-direction: column;
   ${centerJustify && 'align-items: center;'}
   background-color: ${backgroundColor};
   color: ${textColor};
-  @page {
-    size: letter portrait;
-    margin: 34pt 0pt;
-  }
   @media print {
     a {
       color: #000;
     }
     color: #000;
     background-color: #fff;
+    display: block;
   }
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
@@ -104,7 +118,7 @@ export const Title = styled(({ className, name, email, phone }) => {
   return (
     <Flexbox className={className}>
       <Flexbox flexGrow={centerJustify ? 1 : 0} />
-      <Section flexDirection="row" className={className}>
+      <TitleSection flexDirection="row" className={className}>
         <Flexbox flexDirection="column" justifyContent="center">
           <Flexbox height="1em" />
           {wideLayout ? (
@@ -167,7 +181,7 @@ export const Title = styled(({ className, name, email, phone }) => {
             <Flexbox height="12pt" />
           </Flexbox>
         )}
-      </Section>
+      </TitleSection>
       <Flexbox flexGrow={1} />
     </Flexbox>
   );
