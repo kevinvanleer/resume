@@ -148,7 +148,9 @@ export const Title = styled(({ className, name, email, phone }) => {
           ) : (
             <Flexbox flexDirection="column">
               <Body height="1em" flexDirection="column">
-                <Link href={`mailto:${email}`}>{email}</Link>
+                <Link color={titleColor} href={`mailto:${email}`}>
+                  {email}
+                </Link>
               </Body>
               <Flexbox height="5pt" />
               <Body>{phone}</Body>
