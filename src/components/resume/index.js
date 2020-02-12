@@ -10,8 +10,8 @@ import Flexbox from '../layout/Flexbox.js';
 export const centerJustify = true;
 
 export const textColor = '#cecece';
-export const titleColor = '#082678';
-export const headlineColor = '#202123';
+export const titleColor = '#0277bd';
+export const headlineColor = '#004c8c';
 export const backgroundColor = '#2b2f36';
 export const leftMargin = '34pt';
 export const rightMargin = leftMargin;
