@@ -10,8 +10,8 @@ import Flexbox from '../layout/Flexbox.js';
 export const centerJustify = true;
 
 export const textColor = '#cecece';
-export const titleColor = '#0277bd';
-export const headlineColor = '#004c8c';
+export const titleColor = '#8bc34a';
+export const headlineColor = '#5a9216';
 export const backgroundColor = '#2b2f36';
 export const leftMargin = '34pt';
 export const rightMargin = leftMargin;
@@ -57,7 +57,7 @@ Section.defaultProps = {
 };
 
 export const Link = styled.a`
-  color: ${textColor};
+  color: #555;
 `;
 export const Heading = styled(Text)`
   font-size: 24pt;
@@ -186,6 +186,7 @@ export const Title = styled(({ className, name, email, phone }) => {
     </Flexbox>
   );
 })`
+  color: black;
   width: 100%;
   background-color: ${titleColor};
   padding-top: ${topMargin};
@@ -201,6 +202,7 @@ export const Headline = styled(({ className, children }) => (
     <Flexbox flexGrow={1} />
   </Flexbox>
 ))`
+  color: black;
   width: 100%;
   margin-bottom: 1em;
   background-color: ${headlineColor};
