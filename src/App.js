@@ -29,10 +29,8 @@ const App = () => {
         <Body>
           Kevin spent the past 2 years leading product development at Conduce, a
           cloud deployed data visualization SaaS. He diligently focused on
-          empowering users, enabling them to build visualizations and see their
-          business operations through data, as it happened in time and space,
-          recognize patterns, and perform analysis in ways they never thought
-          possible.
+          empowering users and delivering value, while managing a highly
+          effective product development team.
         </Body>
       </Section>
       <Flexbox height="1em" />
@@ -60,7 +58,7 @@ const App = () => {
           company out of deep technical debt. He increased velocity and improved
           quality, all while reducing the teams burn rate. He also started
           delivering immediate value to users. Kevin also functioned as the
-          facilitator of the software development team and primary user
+          facilitator of the software development team and principal user
           interface designer. He wrote code in JavaScript, Python, and Go.
         </Job>
         <Job
