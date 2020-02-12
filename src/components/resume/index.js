@@ -245,6 +245,11 @@ export const Headline = styled(({ className, children }) => (
     line-height: 18pt;
     margin-bottom: 0;
   }
+  :hover {
+    color: white;
+    transition: color 0.5s;
+  }
+  transition: color 0.2s;
 `;
 
 export const Company = ({ name, timespan }) => (
@@ -258,9 +263,9 @@ export const Company = ({ name, timespan }) => (
     )}`}</Chronology>
   </Flexbox>
 );
-export const Job = ({ title, timespan, children }) => {
+export const Job = styled(({ title, timespan, children, className }) => {
   return (
-    <Flexbox flexDirection="column">
+    <Flexbox flexDirection="column" className={className}>
       <Flexbox alignItems="baseline" flexDirection="row" flexWrap="wrap">
         <JobTitle>{title}</JobTitle>
         <Flexbox width="1em" />
@@ -272,7 +277,13 @@ export const Job = ({ title, timespan, children }) => {
       <Flexbox height="1em" />
     </Flexbox>
   );
-};
+})`
+  :hover {
+    color: white;
+    transition: color 0.5s;
+  }
+  transition: color 0.2s;
+`;
 export const Degree = ({ school, degree, year }) => (
   <Flexbox flexDirection="column">
     <Institution>{school}</Institution>
