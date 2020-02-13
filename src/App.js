@@ -461,7 +461,7 @@ const App = () => {
             onClick={() => setShowTechnicalResume(!showTechnicalResume)}
           >
             {showTechnicalResume
-              ? 'Looks great! do you have any leadership experience?'
+              ? 'Looks great! Do you have any leadership experience?'
               : 'Sure, all this leadership stuff is great, but what about your technical chops?'}
           </Button>
         </Section>
