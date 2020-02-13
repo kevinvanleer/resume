@@ -114,24 +114,25 @@ const App = () => {
             >
               <List>
                 <li>
-                  Developed the first product roadmap and focused company on its
-                  execution.
+                  Doubled development team velocity by streamlining the
+                  development process and cutting budget in half.
                 </li>
                 <li>
-                  Worked with sales and delivery to help them understand how
-                  leverage product features when engaging customers.
+                  Reduced developer time spent fixing bugs from nearly 2 per
+                  week to nearly 0.2 per week.
                 </li>
                 <li>
-                  Reduced product backlog from over 1000 stories to under 100,
-                  focusing the team on adding value for the customer.
+                  Improved testing practices and raise quality standards by
+                  integrating offshore QA team and development team.
                 </li>
                 <li>
-                  Managed software development team, increasing team velocity
-                  and improving quality, even after reducing team size.
+                  Fostered more productive sales engagements by working with
+                  sales and delivery to help them understand how leverage
+                  product features when engaging customers.
                 </li>
                 <li>
-                  Worked with offshore QA team to improve testing practices and
-                  raise quality standards, and build a more cohesive team.
+                  Focused the team on adding value for the customer by reducing
+                  product backlog from over 1000 stories to under 100,
                 </li>
                 <li>Lead UX/UI designer.</li>
                 <li>Developed component library in React/Redux.</li>
