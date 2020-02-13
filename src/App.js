@@ -456,7 +456,10 @@ const App = () => {
       <ScreenOnly>
         <Flexbox height="1em" />
         <Section>
-          <Button onClick={() => setShowTechnicalResume(!showTechnicalResume)}>
+          <Button
+            id="kvl-resume-tech-toggle"
+            onClick={() => setShowTechnicalResume(!showTechnicalResume)}
+          >
             {showTechnicalResume
               ? 'Looks great! do you have any leadership experience?'
               : 'Sure, all this leadership stuff is great, but what about your technical chops?'}
