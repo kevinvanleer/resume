@@ -75,7 +75,7 @@ const App = () => {
               </li>
               <li>Developed front-end software using React/Redux</li>
               <li>
-                Integrated storybook to assist with development and testing of
+                Integrated Storybook to assist with development and testing of
                 custom React components
               </li>
               <li>
@@ -92,10 +92,10 @@ const App = () => {
           <Job title="Co-founder" timespan={['2019']}>
             Kevin is the technical co-founder of Grasp Data Inc. His
             responsibilities are both strategic and technical. He sets the
-            product vision for the company and has executed the development of
-            prototypes and demonstrators to help communicate that vision to
-            potential clients. He also works with the other founders to build
-            and maintain the business plan, sales pitch, and budget.
+            product vision for the company and has built prototypes and
+            demonstrators to help communicate that vision to potential clients.
+            He also works with the other founders to build and maintain the
+            business plan, sales pitch, and budget.
           </Job>
         )}
       </Section>
@@ -305,27 +305,31 @@ const App = () => {
                   </li>
                   <li>
                     Executed both the Product Owner and Scrum Master roles,
-                    developing the roadmap, grooming the backlog and
+                    developing the roadmap, grooming the backlog, and
                     facilitating meetings.
                   </li>
-                  <li>Developed software in C++.</li>
+                  <li>Received patent for novel system design.</li>
                   <li>
-                    Support 10 to 20 groups using software enterprise wide.
+                    Developed a proprietary voice activation algorithm to
+                    account for variations in hardware sensitivity and ambient
+                    environment noise.
                   </li>
+                  <li>Gained adoption by 20 teams enterprise wide.</li>
                 </ul>
                 2012
                 <ul>
                   <li>
                     Implemented VCS API interfaces for radio control, audio
-                    streaming and more.
+                    streaming, and network routing.
                   </li>
                   <li>
                     Developed VCS Manager to monitor VCS clients in real-time.
                   </li>
                   <li>
                     Refactored VCS software to utilize the VCS API interface,
-                    break dependencies and allow for software modules to become
-                    distributed across processes and node.
+                    evolving a statically linked class hierarchy into a flexible
+                    reconfigurable collection of sotware modules able to
+                    distribute across processes and computing assets.
                   </li>
                   <li>
                     Made VCS available to Boeing enterprise through
@@ -339,8 +343,8 @@ const App = () => {
                 2011
                 <ul>
                   <li>
-                    Put a focus on unit testing, continuous integration and
-                    automation.
+                    Made unit testing, continuous integration, and automation
+                    team priorities.
                   </li>
                   <li>Developed test plans for deployment.</li>
                   <li>
@@ -351,9 +355,9 @@ const App = () => {
                     Deployed software to internal customers on a broad scale.
                   </li>
                   <li>
-                    Designed VCS API a communication protocol for breaking
-                    dependencies between software modules and distributed,
-                    flexible computing.
+                    Designed VCS API a communication protocol that transformed a
+                    statically compiled class hierarchy into a distributed
+                    reconfigurable collection of software modules.
                   </li>
                 </ul>
                 2010
@@ -366,9 +370,7 @@ const App = () => {
                     Developed compatibility API for interfacing with external
                     flight simulators.
                   </li>
-                  <li>
-                    Deployed product to internal customers at a limited scope.
-                  </li>
+                  <li>Deployed product to targeted users.</li>
                   <li>
                     Published source code documentation on internal web server.
                   </li>
@@ -383,7 +385,7 @@ const App = () => {
                     Developed project plan and business case to present to
                     management.
                   </li>
-                  <li>Got support from management to begin project in 2010.</li>
+                  <li>Won support from management to begin project.</li>
                 </ul>
               </div>
             </Job>
@@ -394,11 +396,14 @@ const App = () => {
                   tactical radio simulation equipment though documented,
                   undocumented and backdoor interfaces.
                 </li>
+                <li>
+                  Realized 10x reduction in support resources required to
+                  configure and maintain COTS system.
+                </li>
                 <li>Prototyped in Bash and implemented in C++.</li>
                 <li>
-                  Developed solution for use in flight simulators and then
-                  adapted solution for use in large scale wargaming
-                  environments.
+                  Developed solution for use in flight simulators and adapted
+                  solution for use in large scale wargaming environments.
                 </li>
               </ul>
             </Job>
@@ -426,16 +431,20 @@ const App = () => {
             >
               <ul>
                 <li>
-                  Work with users to design comm plans for operator in the loop
-                  simulations.
+                  Worked with users to design comm plans for broadcast radio
+                  networks in operator-in-the-loop simulations.
                 </li>
                 <li>
-                  Test communications system configuration with users prior to
+                  Tested communications system configuration with users prior to
                   putting solutions into production.
                 </li>
                 <li>
-                  Provide live technical support for hardware and software for
+                  Provided live technical support for hardware and software
                   installations at several sites nationwide.
+                </li>
+                <li>
+                  Maintained a limited support role as responsibilities grew to
+                  maintain close relationship with users.
                 </li>
               </ul>
             </Job>
