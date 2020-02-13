@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { get } from 'lodash';
 
 import Flexbox from '../layout/Flexbox.js';
+import parts_Text from '../parts/Text.js';
 
 export const centerJustify = true;
 
@@ -30,7 +31,7 @@ export const leftMargin = '34pt';
 export const rightMargin = leftMargin;
 export const topMargin = '0px';
 
-export const Text = styled(Flexbox)`
+export const Text = styled(parts_Text)`
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
   @media print {
@@ -39,6 +40,8 @@ export const Text = styled(Flexbox)`
   }
   }
 `;
+
+Text.defaultProps = { paragraph: true };
 
 export const TitleSection = styled(Flexbox)`
   padding-left: ${leftMargin};
@@ -75,7 +78,25 @@ Section.defaultProps = {
 
 export const Link = styled.a`
   color: ${props => props.color};
+  ${({ monochrome, color, theme }) =>
+    !monochrome &&
+    `
+  &:link {
+  color: ${color};
+  }
+  &:visited {
+  color: ${theme.colors.primary.normal.background};
+  }
+  &:hover {
+  color: ${theme.colors.primary.light.background};
+  }
+  &:active {
+  color: ${theme.colors.primary.dark.background};
+  }
+  `};
 `;
+Link.defaultProps = { color: textColor };
+
 export const Heading = styled(Text)`
   font-size: 24pt;
   @media print {
@@ -118,6 +139,11 @@ export const Document = styled(Flexbox)`
   width: 100%;
 `;
 
+export const ScreenOnly = styled.div`
+  @media print {
+    display: none;
+  }
+`;
 export const Name = styled(Text)`
   && {
     font-size: 48pt;
@@ -145,14 +171,14 @@ export const Title = styled(({ className, name, email, phone }) => {
           )}
           {wideLayout ? (
             <Body height="1em">
-              <Link color={titleColor} href={`mailto:${email}`}>
+              <Link monochrome color={titleColor} href={`mailto:${email}`}>
                 {email}
               </Link>
             </Body>
           ) : (
             <Flexbox flexDirection="column">
               <Body height="1em" flexDirection="column">
-                <Link color={titleColor} href={`mailto:${email}`}>
+                <Link monochrome color={titleColor} href={`mailto:${email}`}>
                   {email}
                 </Link>
               </Body>
@@ -162,6 +188,7 @@ export const Title = styled(({ className, name, email, phone }) => {
               <Flexbox flexDirection="row">
                 <Body>
                   <Link
+                    monochrome
                     color={titleColor}
                     href="https://github.com/kevinvanleer"
                   >
@@ -173,6 +200,7 @@ export const Title = styled(({ className, name, email, phone }) => {
                 <Flexbox width="0.2ch" />
                 <Body>
                   <Link
+                    monochrome
                     color={titleColor}
                     href="https://www.linkedin.com/in/kevin-vanleer/"
                   >
@@ -198,12 +226,17 @@ export const Title = styled(({ className, name, email, phone }) => {
             <Body>{phone}</Body>
             <Flexbox flexGrow={1} minHeight="16pt" />
             <Body>
-              <Link color={titleColor} href="https://github.com/kevinvanleer">
+              <Link
+                monochrome
+                color={titleColor}
+                href="https://github.com/kevinvanleer"
+              >
                 https://github.com/kevinvanleer
               </Link>
             </Body>
             <Body>
               <Link
+                monochrome
                 color={titleColor}
                 href="https://www.linkedin.com/in/kevin-vanleer/"
               >
@@ -284,11 +317,18 @@ export const Job = styled(({ title, timespan, children, className }) => {
     </Flexbox>
   );
 })`
-  :hover {
+  :hover,
+  :active {
     color: white;
     transition: color 0.5s;
   }
   transition: color 0.2s;
+  @media print {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    color: black;
+    background-color: white;
+  }
 `;
 export const Degree = ({ school, degree, year }) => (
   <Flexbox flexDirection="column">
