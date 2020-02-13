@@ -35,7 +35,7 @@ const App = () => {
         {showTechnicalResume ? (
           <Body>
             Kevin spent the past two years building web apps with React and
-            Redux. Most recently developed a technology demonstrator for a
+            Redux. He most recently developed a technology demonstrator for a
             software startup.{' '}
             <Link href="https://grasp-data.com/vantage/tech-demo">
               Check it out!
@@ -108,25 +108,50 @@ const App = () => {
               timespan={['Sep 2017', 'Oct 2019']}
             >
               <ul>
-                <li>Developed and maintained product roadmap.</li>
                 <li>
-                  Worked with sales and delivery to understand customer needs.
+                  Developed the first product roadmap and focused company on its
+                  execution.
                 </li>
                 <li>
-                  Broke down roadmap and stakeholder requests into workable
-                  features.
+                  Worked with sales and delivery to help them understand how
+                  leverage product features when engaging customers.
                 </li>
-                <li>Maintained product backlog.</li>
-                <li>Managed software development team.</li>
-                <li>Executed software deployments.</li>
-                <li>Led testing and quailty assurance.</li>
+                <li>
+                  Reduced product backlog from over 1000 stories to under 100,
+                  focusing the team on adding value for the customer.
+                </li>
+                <li>
+                  Managed software development team, reducing headcount,
+                  increasing team velocity, and improving quality.
+                </li>
+                <li>
+                  Worked with offshore QA team to improve testing practices and
+                  raise quality standards, and build a more cohesive team.
+                </li>
                 <li>Lead UX/UI designer.</li>
-                <li>Developed components library in React/Redux.</li>
+                <li>Developed component library in React/Redux.</li>
               </ul>
             </Job>
-            <Job title="Delivery Engineer" timespan={['Jan 2016', 'Sep 2017']}>
+            <Job
+              title="Senior Software Engineer"
+              timespan={['Jan 2014', 'Sep 2017']}
+            >
               <ul>
-                <li>Technical lead for critical customer.</li>
+                <li>
+                  Worked with customer to design solutions for their use cases.
+                </li>
+                <li>
+                  Guided customer to understand relationships between disparate
+                  data sources.
+                </li>
+                <li>
+                  Designed and developed data ingest pipeline for critical
+                  customer.
+                </li>
+                <li>
+                  Designed and developed spatio-temporal visualizations for
+                  critical customer.
+                </li>
                 <li>
                   Enhanced and stabilized platform software to ensure stability
                   for near-term customer deliverables.
@@ -137,41 +162,27 @@ const App = () => {
                   visualizations without engineering support.
                 </li>
                 <li>
-                  Worked with sales and leadership to understand software
-                  requirements and develop a plan to satisfy them.
-                </li>
-                <li>Developed in C++, Python and JavaScript.</li>
-              </ul>
-            </Job>
-            <Job title="Core Engineer" timespan={['Feb 2015', 'Jan 2016']}>
-              <ul>
-                <li>
                   Planned transition of platform software to a cloud-based
                   software-as-a-service microservice architecture.
                 </li>
-                <li>Developed microservices in D, Clojure and Python.</li>
                 <li>
                   Encouraged team to focus on continuous integration and
                   automated testing.
                 </li>
-                <li>Developed front-end code using React.</li>
-              </ul>
-            </Job>
-            <Job title="Delivery Engineer" timespan={['Dec 2014', 'Feb 2015']}>
-              <ul>
-                <li>
-                  Worked on a team, responsively and iteratively developing
-                  custom integrations of proprietary platform software with
-                  customer data to build interactive visualizations.
-                </li>
-                <li>Developed in C++, Python and JavaScript.</li>
                 <li>
                   Prototyped visual elements and proposed new ways of exploiting
-                  data visualization help users gain insights.
+                  data visualization help users gain insights into their
+                  operations.
                 </li>
                 <li>
                   Prototyped a simulation to generate realistic shopper traffic
                   in a grocery store.
+                </li>
+                <li>Developed microservices in D, Clojure, and Python.</li>
+                <li>Developed prototypes in C++, Python, and JavaScript.</li>
+                <li>
+                  Developed front-end software in JavaScript using jQuery and
+                  React.
                 </li>
               </ul>
             </Job>
@@ -216,47 +227,6 @@ const App = () => {
         {showTechnicalResume ? (
           <React.Fragment>
             <Job
-              title="Alliance Simulation Framework"
-              timespan={['2014', '2014']}
-            >
-              <ul>
-                <li>
-                  Developed and executed short term roadmap for prototyping new
-                  simulation concepts.
-                </li>
-                <li>
-                  Prototyped new simulation concepts for communication using a
-                  proprietary API for storing, sharing and analyzing data
-                  (Omni).
-                </li>
-                <li>
-                  Prototyped new concepts for saving and restoring simulation
-                  state in Python.
-                </li>
-                <li>
-                  Prototyped new concepts for visualizing and interacting with
-                  simulation data in HTML5 and JavaScript.
-                </li>
-                <li>
-                  Began work on a simulation communication layer using ØMQ and
-                  Google Protocol Buffers in C++.
-                </li>
-              </ul>
-            </Job>
-            <Job
-              title="Omni - data capture and replay system"
-              timespan={['2013', '2013']}
-            >
-              <ul>
-                <li>Collaborated to define product vision and mission.</li>
-                <li>
-                  Collaborated to develop project plan and present to
-                  management.
-                </li>
-                <li>Developed 2014 product roadmap.</li>
-              </ul>
-            </Job>
-            <Job
               title="Virtual Communication Environment"
               timespan={['2012', '2013']}
             >
@@ -293,11 +263,13 @@ const App = () => {
             <Job
               flexDirection="column"
               title="Voice Communication System"
-              timespan={['2004', '2014']}
+              timespan={['2009', '2014']}
             >
               <div>
-                2009-2014
                 <ul>
+                  <li>
+                    Developed proposal and pitched management to obtain funding.
+                  </li>
                   <li>
                     Served as project lead on a three to five person distributed
                     team to develop a tactical radio simulation for modeling and
@@ -308,84 +280,52 @@ const App = () => {
                     developing the roadmap, grooming the backlog, and
                     facilitating meetings.
                   </li>
+                  <li>
+                    Made unit testing, continuous integration, and automation
+                    team priorities.
+                  </li>
+                  <li>
+                    Developed minimum viable product to satisfy stakeholders and
+                    save $600,000 in capital investments.
+                  </li>
+                  <li>
+                    Published procedures, guidelines and design information on
+                    internal wiki.
+                  </li>
+                  <li>
+                    Deployed product to targeted users in staged released before
+                    retiring legacy communications system.
+                  </li>
+                  <li>
+                    Developed compatibility API for interfacing with external
+                    flight simulators.
+                  </li>
+                  <li>Published API documentation on internal web server.</li>
+                  <li>
+                    Designed VCS API a communication protocol that transformed a
+                    statically compiled class hierarchy into a distributed
+                    reconfigurable collection of software modules.
+                  </li>
                   <li>Received patent for novel system design.</li>
                   <li>
                     Developed a proprietary voice activation algorithm to
                     account for variations in hardware sensitivity and ambient
                     environment noise.
                   </li>
-                  <li>Gained adoption by 20 teams enterprise wide.</li>
-                </ul>
-                2012
-                <ul>
-                  <li>
-                    Implemented VCS API interfaces for radio control, audio
-                    streaming, and network routing.
-                  </li>
-                  <li>
-                    Developed VCS Manager to monitor VCS clients in real-time.
-                  </li>
-                  <li>
-                    Refactored VCS software to utilize the VCS API interface,
-                    evolving a statically linked class hierarchy into a flexible
-                    reconfigurable collection of sotware modules able to
-                    distribute across processes and computing assets.
-                  </li>
                   <li>
                     Made VCS available to Boeing enterprise through
                     sourceforge-like interface.
                   </li>
                   <li>
-                    Started using internal social media site to keep users
-                    informed on important updates.
+                    Used internal social media site to keep users informed on
+                    important updates.
                   </li>
-                </ul>
-                2011
-                <ul>
+                  <li>Adopted by 20 teams enterprise wide.</li>
                   <li>
-                    Made unit testing, continuous integration, and automation
-                    team priorities.
+                    Virtually eliminated need for dedicated support staff,
+                    increasing overall reliability, freeing resources to focus
+                    on other priorities.
                   </li>
-                  <li>Developed test plans for deployment.</li>
-                  <li>
-                    Brought unit test cover to over 95% line coverage on
-                    critical libraries.
-                  </li>
-                  <li>
-                    Deployed software to internal customers on a broad scale.
-                  </li>
-                  <li>
-                    Designed VCS API a communication protocol that transformed a
-                    statically compiled class hierarchy into a distributed
-                    reconfigurable collection of software modules.
-                  </li>
-                </ul>
-                2010
-                <ul>
-                  <li>
-                    Developed minimum viable product to satisfy stakeholders and
-                    save $600,000 in capital investments.
-                  </li>
-                  <li>
-                    Developed compatibility API for interfacing with external
-                    flight simulators.
-                  </li>
-                  <li>Deployed product to targeted users.</li>
-                  <li>
-                    Published source code documentation on internal web server.
-                  </li>
-                  <li>
-                    Published procedures, guidelines and design information on
-                    internal wiki.
-                  </li>
-                </ul>
-                2009
-                <ul>
-                  <li>
-                    Developed project plan and business case to present to
-                    management.
-                  </li>
-                  <li>Won support from management to begin project.</li>
                 </ul>
               </div>
             </Job>
@@ -397,8 +337,8 @@ const App = () => {
                   undocumented and backdoor interfaces.
                 </li>
                 <li>
-                  Realized 10x reduction in support resources required to
-                  configure and maintain COTS system.
+                  Realized 10x reduction in support required to configure and
+                  maintain COTS system.
                 </li>
                 <li>Prototyped in Bash and implemented in C++.</li>
                 <li>
