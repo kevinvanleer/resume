@@ -15,6 +15,7 @@ import {
   Heading,
   ScreenOnly,
   Link,
+  List,
 } from './components/resume';
 
 import * as text from './text.json';
@@ -32,30 +33,34 @@ const App = () => {
       />
       <Headline>{text.headline}</Headline>
       <Section>
-        {showTechnicalResume ? (
-          <Body>
-            Kevin spent the past two years building web apps with React and
-            Redux. He most recently developed a technology demonstrator for a
-            software startup.{' '}
-            <Link href="https://grasp-data.com/vantage/tech-demo">
-              Check it out!
-            </Link>
-          </Body>
-        ) : (
-          <Body>
-            Kevin spent the past 2 years leading product development at Conduce,
-            a cloud deployed data visualization SaaS. He diligently focused on
-            empowering users and delivering value, while managing a highly
-            effective product development team.
-          </Body>
-        )}
+        <Flexbox flexDirection="column">
+          {showTechnicalResume ? (
+            <Body>
+              Kevin spent the past two years building web apps with React and
+              Redux. He most recently developed a technology demonstrator for a
+              software startup.{' '}
+              <ScreenOnly>
+                <Link href="https://grasp-data.com/vantage/tech-demo">
+                  Check it out!
+                </Link>
+              </ScreenOnly>
+            </Body>
+          ) : (
+            <Body>
+              Kevin spent the past 2 years leading product development at
+              Conduce, a cloud deployed data visualization SaaS. He diligently
+              focused on empowering users and delivering value, while managing a
+              highly effective product development team.
+            </Body>
+          )}
+        </Flexbox>
       </Section>
       <Flexbox height="1em" />
       <Section>
         <Company name="Grasp Data Inc." timespan={['2019']} />
         {showTechnicalResume ? (
           <Job title="Technical co-founder" timespan={['2019']}>
-            <ul>
+            <List>
               <li>Configured CI/CD with GitLab and GKE</li>
               <li>
                 Developed algorithm to generate warehouse racking layout from
@@ -79,14 +84,14 @@ const App = () => {
                 custom React components
               </li>
               <li>
-                Developed a performant animated warehouse visualization,
-                rendered in the DOM with thousands of elements.
+                Developed an animated warehouse visualization, rendered in the
+                DOM with thousands of elements.
               </li>
               <li>
                 Developed a warehouse visualization technology demonstrator with
                 spatial and temporal navigation.
               </li>
-            </ul>
+            </List>
           </Job>
         ) : (
           <Job title="Co-founder" timespan={['2019']}>
@@ -107,7 +112,7 @@ const App = () => {
               title="Director of Product Development"
               timespan={['Sep 2017', 'Oct 2019']}
             >
-              <ul>
+              <List>
                 <li>
                   Developed the first product roadmap and focused company on its
                   execution.
@@ -121,8 +126,8 @@ const App = () => {
                   focusing the team on adding value for the customer.
                 </li>
                 <li>
-                  Managed software development team, reducing headcount,
-                  increasing team velocity, and improving quality.
+                  Managed software development team, increasing team velocity
+                  and improving quality, even after reducing team size.
                 </li>
                 <li>
                   Worked with offshore QA team to improve testing practices and
@@ -130,13 +135,13 @@ const App = () => {
                 </li>
                 <li>Lead UX/UI designer.</li>
                 <li>Developed component library in React/Redux.</li>
-              </ul>
+              </List>
             </Job>
             <Job
               title="Senior Software Engineer"
               timespan={['Jan 2014', 'Sep 2017']}
             >
-              <ul>
+              <List>
                 <li>
                   Worked with customer to design solutions for their use cases.
                 </li>
@@ -184,7 +189,7 @@ const App = () => {
                   Developed front-end software in JavaScript using jQuery and
                   React.
                 </li>
-              </ul>
+              </List>
             </Job>
           </React.Fragment>
         ) : (
@@ -230,7 +235,7 @@ const App = () => {
               title="Virtual Communication Environment"
               timespan={['2012', '2013']}
             >
-              <ul>
+              <List>
                 <li>
                   Served as project lead on a three person distributed team to
                   develop advanced voice capabilities.
@@ -258,79 +263,77 @@ const App = () => {
                   capabilities, sound simulation, synthetic voice radio
                   transmissions and Virtual Communication Environment Server.
                 </li>
-              </ul>
+              </List>
             </Job>
             <Job
               flexDirection="column"
               title="Voice Communication System"
               timespan={['2009', '2014']}
             >
-              <div>
-                <ul>
-                  <li>
-                    Developed proposal and pitched management to obtain funding.
-                  </li>
-                  <li>
-                    Served as project lead on a three to five person distributed
-                    team to develop a tactical radio simulation for modeling and
-                    simulation.
-                  </li>
-                  <li>
-                    Executed both the Product Owner and Scrum Master roles,
-                    developing the roadmap, grooming the backlog, and
-                    facilitating meetings.
-                  </li>
-                  <li>
-                    Made unit testing, continuous integration, and automation
-                    team priorities.
-                  </li>
-                  <li>
-                    Developed minimum viable product to satisfy stakeholders and
-                    save $600,000 in capital investments.
-                  </li>
-                  <li>
-                    Published procedures, guidelines and design information on
-                    internal wiki.
-                  </li>
-                  <li>
-                    Deployed product to targeted users in staged released before
-                    retiring legacy communications system.
-                  </li>
-                  <li>
-                    Developed compatibility API for interfacing with external
-                    flight simulators.
-                  </li>
-                  <li>Published API documentation on internal web server.</li>
-                  <li>
-                    Designed VCS API a communication protocol that transformed a
-                    statically compiled class hierarchy into a distributed
-                    reconfigurable collection of software modules.
-                  </li>
-                  <li>Received patent for novel system design.</li>
-                  <li>
-                    Developed a proprietary voice activation algorithm to
-                    account for variations in hardware sensitivity and ambient
-                    environment noise.
-                  </li>
-                  <li>
-                    Made VCS available to Boeing enterprise through
-                    sourceforge-like interface.
-                  </li>
-                  <li>
-                    Used internal social media site to keep users informed on
-                    important updates.
-                  </li>
-                  <li>Adopted by 20 teams enterprise wide.</li>
-                  <li>
-                    Virtually eliminated need for dedicated support staff,
-                    increasing overall reliability, freeing resources to focus
-                    on other priorities.
-                  </li>
-                </ul>
-              </div>
+              <List>
+                <li>
+                  Developed proposal and pitched management to obtain funding.
+                </li>
+                <li>
+                  Served as project lead on a three to five person distributed
+                  team to develop a tactical radio simulation for modeling and
+                  simulation.
+                </li>
+                <li>
+                  Executed both the Product Owner and Scrum Master roles,
+                  developing the roadmap, grooming the backlog, and facilitating
+                  meetings.
+                </li>
+                <li>
+                  Made unit testing, continuous integration, and automation team
+                  priorities.
+                </li>
+                <li>
+                  Developed minimum viable product to satisfy stakeholders and
+                  save $600,000 in capital investments.
+                </li>
+                <li>
+                  Published procedures, guidelines and design information on
+                  internal wiki.
+                </li>
+                <li>
+                  Deployed product to targeted users in staged released before
+                  retiring legacy communications system.
+                </li>
+                <li>
+                  Developed compatibility API for interfacing with external
+                  flight simulators.
+                </li>
+                <li>Published API documentation on internal web server.</li>
+                <li>
+                  Designed VCS API a communication protocol that transformed a
+                  statically compiled class hierarchy into a distributed
+                  reconfigurable collection of software modules.
+                </li>
+                <li>Received patent for novel system design.</li>
+                <li>
+                  Developed a proprietary voice activation algorithm to account
+                  for variations in hardware sensitivity and ambient environment
+                  noise.
+                </li>
+                <li>
+                  Made VCS available to Boeing enterprise through
+                  sourceforge-like interface.
+                </li>
+                <li>
+                  Used internal social media site to keep users informed on
+                  important updates.
+                </li>
+                <li>Adopted by 20 teams enterprise wide.</li>
+                <li>
+                  Virtually eliminated need for dedicated support staff,
+                  increasing overall reliability, freeing resources to focus on
+                  other priorities.
+                </li>
+              </List>
             </Job>
             <Job title="Audio Configuration Server" timespan={['2005', '2010']}>
-              <ul>
+              <List>
                 <li>
                   Developed embedded server to control commercial off the shelf
                   tactical radio simulation equipment though documented,
@@ -345,13 +348,13 @@ const App = () => {
                   Developed solution for use in flight simulators and adapted
                   solution for use in large scale wargaming environments.
                 </li>
-              </ul>
+              </List>
             </Job>
             <Job
               title="ASTi Telestra System Integrator"
               timespan={['2004', '2010']}
             >
-              <ul>
+              <List>
                 <li>
                   Designed and integrated tactical radio simulation solutions
                   for flight simulators at enterprise and government sites.
@@ -363,13 +366,13 @@ const App = () => {
                   Tested commercial products and interfaced with vendor to
                   resolve issues.
                 </li>
-              </ul>
+              </List>
             </Job>
             <Job
               title="Tactical voice communications support"
               timespan={['2004', '2014']}
             >
-              <ul>
+              <List>
                 <li>
                   Worked with users to design comm plans for broadcast radio
                   networks in operator-in-the-loop simulations.
@@ -386,7 +389,7 @@ const App = () => {
                   Maintained a limited support role as responsibilities grew to
                   maintain close relationship with users.
                 </li>
-              </ul>
+              </List>
             </Job>
           </React.Fragment>
         ) : (

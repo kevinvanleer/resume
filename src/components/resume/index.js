@@ -31,14 +31,21 @@ export const leftMargin = '34pt';
 export const rightMargin = leftMargin;
 export const topMargin = '0px';
 
+export const List = styled.ul`
+  margin: 0;
+`;
+
 export const Text = styled(parts_Text)`
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
   @media print {
     font-size: 12pt;
     color: black;
-  }
-  }
+  ${({ screenOnly }) =>
+    screenOnly &&
+    `
+  display: none;
+  `}}
 `;
 
 Text.defaultProps = { paragraph: true };
@@ -46,14 +53,15 @@ Text.defaultProps = { paragraph: true };
 export const TitleSection = styled(Flexbox)`
   padding-left: ${leftMargin};
   padding-right ${rightMargin};
+  max-width: 1080px;
+  width: calc(100% - ${leftMargin} - ${rightMargin});
+
   @media print {
     break-inside: avoid;
     page-break-inside: avoid;
     color: black;
     background-color: white;
   }
-  max-width: 1080px;
-  width: calc(100% - ${leftMargin} - ${rightMargin});
 `;
 
 TitleSection.defaultProps = {
@@ -63,13 +71,12 @@ TitleSection.defaultProps = {
 export const Section = styled(Flexbox)`
   padding-left: ${leftMargin};
   padding-right ${rightMargin};
-  @media print {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    display: block;
-  }
   max-width: 1080px;
   width: calc(100% - ${leftMargin} - ${rightMargin});
+
+  @media print {
+    display: block;
+  }
 `;
 
 Section.defaultProps = {
@@ -94,13 +101,23 @@ export const Link = styled.a`
   color: ${theme.colors.primary.dark.background};
   }
   `};
+
+  @media print {
+    color: black;
+  ${({ screenOnly }) =>
+    screenOnly &&
+    `
+  display: none;
+  `}}
 `;
 Link.defaultProps = { color: textColor };
 
 export const Heading = styled(Text)`
   font-size: 24pt;
+
   @media print {
-    font-size: 20pt;
+    font-size: 18pt;
+    line-height: 24pt;
   }
 `;
 export const Chronology = styled(Text)`
@@ -108,17 +125,19 @@ export const Chronology = styled(Text)`
 `;
 export const JobTitle = styled(Text)`
   font-size: 18pt;
+
   @media print {
-    font-size: 16pt;
+    font-size: 14pt;
   }
 `;
 export const Body = styled(Text)`
-  line-height: 17pt;
+  line-height: 18pt;
 `;
 export const Institution = styled(Text)`
   font-size: 18pt;
+
   @media print {
-    font-size: 16pt;
+    font-size: 14pt;
   }
 `;
 export const Document = styled(Flexbox)`
@@ -126,6 +145,10 @@ export const Document = styled(Flexbox)`
   ${centerJustify && 'align-items: center;'}
   background-color: ${backgroundColor};
   color: ${textColor};
+  font-family: 'Cairo', sans-serif;
+  font-size: 14pt;
+  width: 100%;
+
   @media print {
     a {
       color: #000;
@@ -134,12 +157,11 @@ export const Document = styled(Flexbox)`
     background-color: #fff;
     display: block;
   }
-  font-family: 'Cairo', sans-serif;
-  font-size: 14pt;
-  width: 100%;
 `;
 
 export const ScreenOnly = styled.div`
+  display: contents;
+
   @media print {
     display: none;
   }
@@ -277,6 +299,11 @@ export const Headline = styled(({ className, children }) => (
   padding-bottom: 1em;
   font-size: 20pt;
   line-height: 22pt;
+  :hover {
+    color: white;
+    transition: color 0.5s;
+  }
+  transition: color 0.2s;
   @media print {
     background-color: white;
     color: black;
@@ -284,36 +311,39 @@ export const Headline = styled(({ className, children }) => (
     line-height: 18pt;
     margin-bottom: 0;
   }
-  :hover {
-    color: white;
-    transition: color 0.5s;
-  }
-  transition: color 0.2s;
 `;
 
-export const Company = ({ name, timespan }) => (
-  <Flexbox alignItems="baseline" flexWrap="wrap">
-    <Heading>{name}</Heading>
-    <Flexbox width="1em" />
-    <Chronology>{`${get(timespan, [0])} - ${get(
-      timespan,
-      [1],
-      'present'
-    )}`}</Chronology>
-  </Flexbox>
-);
+export const Company = styled(({ className, name, timespan }) => (
+  <div className={className}>
+    <Flexbox alignItems="baseline" flexWrap="wrap">
+      <Heading>{name}</Heading>
+      <Flexbox width="1em" />
+      <Chronology>{`${get(timespan, [0])} - ${get(
+        timespan,
+        [1],
+        'present'
+      )}`}</Chronology>
+    </Flexbox>
+  </div>
+))`
+  @media print {
+    display: block;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+`;
+
 export const Job = styled(({ title, timespan, children, className }) => {
   return (
     <Flexbox flexDirection="column" className={className}>
       <Flexbox alignItems="baseline" flexDirection="row" flexWrap="wrap">
         <JobTitle>{title}</JobTitle>
-        <Flexbox width="1em" />
+        <Flexbox width="1ch" />
         <Chronology>
           {`${get(timespan, [0])} - ${get(timespan, [1], 'present')}`}
         </Chronology>
       </Flexbox>
       <Body>{children}</Body>
-      <Flexbox height="1em" />
     </Flexbox>
   );
 })`
@@ -329,13 +359,14 @@ export const Job = styled(({ title, timespan, children, className }) => {
     color: black;
     background-color: white;
   }
+  margin-bottom: 0.7em;
 `;
 export const Degree = ({ school, degree, year }) => (
   <Flexbox flexDirection="column">
     <Institution>{school}</Institution>
     <Flexbox alignItems="baseline">
       <Body>{degree}</Body>
-      <Flexbox width="1em" />
+      <Flexbox width="1ch" />
       <Chronology>{year}</Chronology>
     </Flexbox>
     <Flexbox height="1em" />
