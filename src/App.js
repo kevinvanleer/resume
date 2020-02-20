@@ -411,7 +411,10 @@ const App = () => {
         <Section>
           <Button
             id="kvl-resume-tech-toggle"
-            onClick={() => setShowTechnicalResume(!showTechnicalResume)}
+            onClick={() => {
+              setShowTechnicalResume(!showTechnicalResume);
+              window.scrollTo(0, 0);
+            }}
           >
             {showTechnicalResume
               ? 'Looks great! Do you have any leadership experience?'
