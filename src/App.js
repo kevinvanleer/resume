@@ -477,6 +477,9 @@ const App = () => {
           year="2004"
         />
       </Section>
+      <ScreenOnly>
+        <Flexbox height="2em" />
+      </ScreenOnly>
     </Document>
   );
 };
