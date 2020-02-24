@@ -9,7 +9,6 @@ import {
   Section,
   Body,
   Headline,
-  Company,
   Job,
   Degree,
   Heading,
@@ -48,18 +47,22 @@ const App = () => {
           ) : (
             <Body>
               Kevin spent the past 2 years leading product development at
-              Conduce, a cloud deployed data visualization SaaS. He diligently
-              focused on empowering users and delivering value, while managing a
-              highly effective product development team.
+              Conduce Inc., developing a cloud deployed data visualization SaaS.
+              He diligently focused on empowering users and delivering value,
+              while managing a highly effective product development team.
             </Body>
           )}
         </Flexbox>
       </Section>
       <Flexbox height="1em" />
       <Section>
-        <Company name="Grasp Data Inc." timespan={['2019']} />
+        <Heading>Professional</Heading>
         {showTechnicalResume ? (
-          <Job title="Technical co-founder" timespan={['2019']}>
+          <Job
+            title="Technical co-founder"
+            company="Grasp Data Inc."
+            timespan={['2019']}
+          >
             <List>
               <li>Configured CI/CD with GitLab and GKE</li>
               <li>
@@ -94,22 +97,28 @@ const App = () => {
             </List>
           </Job>
         ) : (
-          <Job title="Co-founder" timespan={['2019']}>
-            Kevin is the technical co-founder of Grasp Data Inc. His
-            responsibilities are both strategic and technical. He sets the
-            product vision for the company and has built prototypes and
-            demonstrators to help communicate that vision to potential clients.
-            He also works with the other founders to build and maintain the
-            business plan, sales pitch, and budget.
+          <Job title="CTO" company="Grasp Data Inc." timespan={['2019']}>
+            <li>
+              Excited new customers by delivering technology demonstrator to
+              public website after only three weeks of development.
+            </li>
+            <li>
+              Contributed discriminating capability by inventing technology to
+              build warehouse digital twins without CAD/CAM diagrams.
+            </li>
+            <li>
+              Established product plan to empower logistics professionals to
+              understand operational behaviors.
+            </li>
           </Job>
         )}
       </Section>
       <Section>
-        <Company name="Conduce" timespan={['2014', '2019']} />
         {showTechnicalResume ? (
           <React.Fragment>
             <Job
               title="Director of Product Development"
+              company="Conduce Inc."
               timespan={['Sep 2017', 'Oct 2019']}
             >
               <List>
@@ -140,6 +149,7 @@ const App = () => {
             </Job>
             <Job
               title="Senior Software Engineer"
+              company="Conduce Inc."
               timespan={['Jan 2014', 'Sep 2017']}
             >
               <List>
@@ -197,43 +207,49 @@ const App = () => {
           <React.Fragment>
             <Job
               title="Director of Product Development"
+              company="Conduce Inc."
               timespan={['Sep 2017', 'Oct 2019']}
-              startDate="Sep 2017"
-              endData="Oct 2019"
             >
-              Kevin was responsible for development and maintenance of the
-              Conduce SAAS platform. He owned the product roadmap and backlog.
-              Kevin led the company out of deep technical debt. He increased
-              velocity and improved quality, all while reducing the teams burn
-              rate. He also started delivering immediate value to users. Kevin
-              also functioned as the facilitator of the software development
-              team and principal user interface designer. He wrote code in
-              JavaScript, Python, and Go.
+              <li>
+                Doubled developer productivity by streamlining software process
+                and catching bugs before they were merged into baseline.
+              </li>
+              <li>
+                Accelerated team velocity, even while reducing resources by
+                half.
+              </li>
+              <li>
+                Increased transparency into product development by publishing a
+                roadmap and generating data-driven reports for investors.
+              </li>
             </Job>
             <Job
               title="Senior Software Engineer"
+              company="Conduce Inc."
               timespan={['Dec 2014', 'Sep 2017']}
             >
-              Kevin served on both the delivery and platform teams. He developed
-              platform features and exploited those features to build solutions
-              for customers to help them reach desired business outcomes. He met
-              regularly with customers to gather requirements and demonstrate
-              product capabilities. Kevin developed an application independent
-              from the platform, and integrated with it, to deliver on an
-              important customer requirement. He also developed a time control
-              feature that was later incorporated into the software product. In
-              addition, Kevin worked with company leadership bring about
-              positive change in product development practices.
+              <li>
+                Delivered solution from critical customer, exploiting and
+                extending the software platform to exceed expectations.
+              </li>
+              <li>
+                Effected positive change by highlighting opportunities to
+                improve communication and work more effectively as a team.
+              </li>
+              <li>
+                Pivoted product new direction to deliver customer value when
+                technology partner failed to deliver.
+              </li>
             </Job>
           </React.Fragment>
         )}
       </Section>
       <Section>
-        <Company name="Boeing" timespan={['2004', '2014']} />
         {showTechnicalResume ? (
           <React.Fragment>
             <Job
-              title="Virtual Communication Environment"
+              title="Virtual Communication Environment Lead"
+              company="Boeing"
               timespan={['2012', '2013']}
             >
               <List>
@@ -268,7 +284,8 @@ const App = () => {
             </Job>
             <Job
               flexDirection="column"
-              title="Voice Communication System"
+              company="Boeing"
+              title="Voice Communication System Lead"
               timespan={['2009', '2014']}
             >
               <List>
@@ -333,7 +350,11 @@ const App = () => {
                 </li>
               </List>
             </Job>
-            <Job title="Audio Configuration Server" timespan={['2005', '2010']}>
+            <Job
+              title="Audio Configuration Server Lead"
+              company="Boeing"
+              timespan={['2005', '2010']}
+            >
               <List>
                 <li>
                   Developed embedded server to control commercial off the shelf
@@ -353,6 +374,7 @@ const App = () => {
             </Job>
             <Job
               title="ASTi Telestra System Integrator"
+              company="Boeing"
               timespan={['2004', '2010']}
             >
               <List>
@@ -371,6 +393,7 @@ const App = () => {
             </Job>
             <Job
               title="Tactical voice communications support"
+              company="Boeing"
               timespan={['2004', '2014']}
             >
               <List>
@@ -394,15 +417,27 @@ const App = () => {
             </Job>
           </React.Fragment>
         ) : (
-          <Job title="Software Engineer" timespan={['2004', '2014']}>
-            Kevin spearheaded development of Voice Communication System, a
-            peer-to-peer radio simulation and voice communications software
-            suite. He led the development team and was responsible for overall
-            product design. Kevin and his team proved value in a matter of
-            months, offsetting significant installation costs by replacing a
-            commercial-off-the-shelf system. Kevin went on to deploy the
-            solution in several facilities, reducing setup and maintenance costs
-            for simulation events.
+          <Job
+            title="Software Engineer"
+            company="Boeing"
+            timespan={['2004', '2014']}
+          >
+            <li>
+              Reduced support costs by developing a reliable self-service
+              software solution for tactical radio simulation that eliminated
+              need for dedicated engineering staff.
+            </li>
+            <li>
+              Reduced complexity and recurring cost by replacing custom hardware
+              solution with plug-and-play peripherals and software that runs on
+              existing computing infrastructure.
+            </li>
+            <li>
+              Exemplified the standard for how to facilitate and manage a
+              distributed software development teams by following Agile software
+              development principles and treating team members with care and
+              respect.
+            </li>
           </Job>
         )}
       </Section>
@@ -438,7 +473,7 @@ const App = () => {
         <Heading>Education</Heading>
         <Degree
           school="Missouri University of Science and Technology"
-          degree="Bachelor of Computer Engineering"
+          degree="Bachelor of Science: Computer Engineering"
           year="2004"
         />
       </Section>

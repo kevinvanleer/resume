@@ -39,7 +39,7 @@ export const Text = styled(parts_Text)`
   font-family: 'Cairo', sans-serif;
   font-size: 14pt;
   @media print {
-    font-size: 12pt;
+    font-size: 10pt;
     color: black;
   ${({ screenOnly }) =>
     screenOnly &&
@@ -117,7 +117,7 @@ export const Heading = styled(Text)`
 
   @media print {
     font-size: 18pt;
-    line-height: 24pt;
+    line-height: 20pt;
   }
 `;
 export const Chronology = styled(Text)`
@@ -131,7 +131,10 @@ export const JobTitle = styled(Text)`
   }
 `;
 export const Body = styled(Text)`
-  line-height: 18pt;
+  line-height: 20pt;
+  @media print {
+    line-height: 12pt;
+  }
 `;
 export const Institution = styled(Text)`
   font-size: 18pt;
@@ -333,20 +336,29 @@ export const Company = styled(({ className, name, timespan }) => (
   }
 `;
 
-export const Job = styled(({ title, timespan, children, className }) => {
-  return (
-    <Flexbox flexDirection="column" className={className}>
-      <Flexbox alignItems="baseline" flexDirection="row" flexWrap="wrap">
-        <JobTitle>{title}</JobTitle>
-        <Flexbox width="1ch" />
-        <Chronology>
-          {`${get(timespan, [0])} - ${get(timespan, [1], 'present')}`}
-        </Chronology>
+export const Job = styled(
+  ({ title, company, timespan, children, className }) => {
+    return (
+      <Flexbox flexDirection="column" className={className}>
+        <Flexbox alignItems="baseline" flexDirection="row" flexWrap="wrap">
+          <JobTitle>{title}</JobTitle>
+          {company && (
+            <React.Fragment>
+              <JobTitle>,</JobTitle>
+              <Flexbox width="1ch" />
+              <JobTitle>{company}</JobTitle>
+            </React.Fragment>
+          )}
+          <Flexbox width="2ch" />
+          <Chronology>
+            {`${get(timespan, [0])} - ${get(timespan, [1], 'present')}`}
+          </Chronology>
+        </Flexbox>
+        <Body>{children}</Body>
       </Flexbox>
-      <Body>{children}</Body>
-    </Flexbox>
-  );
-})`
+    );
+  }
+)`
   :hover,
   :active {
     color: white;
@@ -369,6 +381,5 @@ export const Degree = ({ school, degree, year }) => (
       <Flexbox width="1ch" />
       <Chronology>{year}</Chronology>
     </Flexbox>
-    <Flexbox height="1em" />
   </Flexbox>
 );
