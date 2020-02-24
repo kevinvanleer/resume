@@ -7,8 +7,8 @@ import {
   Document,
   Title,
   Section,
-  Body,
   Headline,
+  Summary,
   Job,
   Degree,
   Heading,
@@ -34,23 +34,23 @@ const App = () => {
       <Section>
         <Flexbox flexDirection="column">
           {showTechnicalResume ? (
-            <Body>
+            <Summary>
               Kevin spent the past two years building web apps with React and
               Redux. He most recently developed a technology demonstrator for a
-              software startup.{' '}
+              software startup.
               <ScreenOnly>
                 <Link href="https://grasp-data.com/vantage/tech-demo">
                   Check it out!
                 </Link>
               </ScreenOnly>
-            </Body>
+            </Summary>
           ) : (
-            <Body>
+            <Summary>
               Kevin spent the past 2 years leading product development at
               Conduce Inc., developing a cloud deployed data visualization SaaS.
               He diligently focused on empowering users and delivering value,
               while managing a highly effective product development team.
-            </Body>
+            </Summary>
           )}
         </Flexbox>
       </Section>

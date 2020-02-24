@@ -117,7 +117,7 @@ export const Heading = styled(Text)`
 
   @media print {
     font-size: 18pt;
-    line-height: 20pt;
+    line-height: 18pt;
   }
 `;
 export const Chronology = styled(Text)`
@@ -167,6 +167,14 @@ export const ScreenOnly = styled.div`
 
   @media print {
     display: none;
+  }
+`;
+export const Summary = styled(Text)`
+  font-size: 16pt;
+  line-height: 22pt;
+  @media print {
+    font-size: 10pt;
+    line-height: 12pt;
   }
 `;
 export const Name = styled(Text)`
