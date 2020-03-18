@@ -123,14 +123,6 @@ const App = () => {
             >
               <List>
                 <li>
-                  Doubled development team velocity by streamlining the
-                  development process and cutting budget in half.
-                </li>
-                <li>
-                  Reduced developer time spent fixing bugs from nearly 2 per
-                  week to nearly 0.2 per week.
-                </li>
-                <li>
                   Improved testing practices and raise quality standards by
                   integrating offshore QA team and development team.
                 </li>
@@ -143,8 +135,14 @@ const App = () => {
                   Focused the team on adding value for the customer by reducing
                   product backlog from over 1000 stories to under 100,
                 </li>
-                <li>Lead UX/UI designer.</li>
-                <li>Developed component library in React/Redux.</li>
+                <li>
+                  Improved customer engagement by designing beautiful and usable
+                  workflows and interfaces.
+                </li>
+                <li>
+                  Enabled team to develop consistent user interfaces by building
+                  a component library in React/Redux.
+                </li>
               </List>
             </Job>
             <Job
@@ -157,10 +155,6 @@ const App = () => {
                   Worked with customer to design solutions for their use cases.
                 </li>
                 <li>
-                  Guided customer to understand relationships between disparate
-                  data sources.
-                </li>
-                <li>
                   Designed and developed data ingest pipeline for critical
                   customer.
                 </li>
@@ -171,19 +165,6 @@ const App = () => {
                 <li>
                   Enhanced and stabilized platform software to ensure stability
                   for near-term customer deliverables.
-                </li>
-                <li>
-                  Developed tools to enable data analysts, system integrators
-                  and business development professionals to build custom
-                  visualizations without engineering support.
-                </li>
-                <li>
-                  Planned transition of platform software to a cloud-based
-                  software-as-a-service microservice architecture.
-                </li>
-                <li>
-                  Encouraged team to focus on continuous integration and
-                  automated testing.
                 </li>
                 <li>
                   Prototyped visual elements and proposed new ways of exploiting
@@ -248,50 +229,12 @@ const App = () => {
         {showTechnicalResume ? (
           <React.Fragment>
             <Job
-              title="Virtual Communication Environment Lead"
-              company="Boeing"
-              timespan={['2012', '2013']}
-            >
-              <List>
-                <li>
-                  Served as project lead on a three person distributed team to
-                  develop advanced voice capabilities.
-                </li>
-                <li>
-                  Executed both the Product Owner and Scrum Master roles,
-                  developing the roadmap, grooming the backlog and facilitating
-                  meetings.
-                </li>
-                <li>
-                  Implemented finite impulse response filter algorithms for use
-                  in sound synthesis applications.
-                </li>
-                <li>
-                  Designed solution for actuating synthetic voice transmissions
-                  on simulated tactical radios.
-                </li>
-                <li>
-                  Designed solution integrating commercial CobraNet audio
-                  adapters with custom software on intel-based servers for
-                  scalable multi-user multi-endpoint voice communications.
-                </li>
-                <li>
-                  Led the design, implementation and deployment of 3 major
-                  capabilities, sound simulation, synthetic voice radio
-                  transmissions and Virtual Communication Environment Server.
-                </li>
-              </List>
-            </Job>
-            <Job
               flexDirection="column"
               company="Boeing"
-              title="Voice Communication System Lead"
-              timespan={['2009', '2014']}
+              title="Software Engineer"
+              timespan={['2004', '2014']}
             >
               <List>
-                <li>
-                  Developed proposal and pitched management to obtain funding.
-                </li>
                 <li>
                   Served as project lead on a three to five person distributed
                   team to develop a tactical radio simulation for modeling and
@@ -307,111 +250,14 @@ const App = () => {
                   priorities.
                 </li>
                 <li>
-                  Developed minimum viable product to satisfy stakeholders and
-                  save $600,000 in capital investments.
-                </li>
-                <li>
-                  Published procedures, guidelines and design information on
-                  internal wiki.
-                </li>
-                <li>
-                  Deployed product to targeted users in staged released before
-                  retiring legacy communications system.
-                </li>
-                <li>
-                  Developed compatibility API for interfacing with external
-                  flight simulators.
-                </li>
-                <li>Published API documentation on internal web server.</li>
-                <li>
-                  Designed VCS API a communication protocol that transformed a
-                  statically compiled class hierarchy into a distributed
-                  reconfigurable collection of software modules.
-                </li>
-                <li>Received patent for novel system design.</li>
-                <li>
                   Developed a proprietary voice activation algorithm to account
                   for variations in hardware sensitivity and ambient environment
                   noise.
                 </li>
                 <li>
-                  Made VCS available to Boeing enterprise through
-                  sourceforge-like interface.
-                </li>
-                <li>
-                  Used internal social media site to keep users informed on
-                  important updates.
-                </li>
-                <li>Adopted by 20 teams enterprise wide.</li>
-                <li>
                   Virtually eliminated need for dedicated support staff,
                   increasing overall reliability, freeing resources to focus on
                   other priorities.
-                </li>
-              </List>
-            </Job>
-            <Job
-              title="Audio Configuration Server Lead"
-              company="Boeing"
-              timespan={['2005', '2010']}
-            >
-              <List>
-                <li>
-                  Developed embedded server to control commercial off the shelf
-                  tactical radio simulation equipment though documented,
-                  undocumented and backdoor interfaces.
-                </li>
-                <li>
-                  Realized 10x reduction in support required to configure and
-                  maintain COTS system.
-                </li>
-                <li>Prototyped in Bash and implemented in C++.</li>
-                <li>
-                  Developed solution for use in flight simulators and adapted
-                  solution for use in large scale wargaming environments.
-                </li>
-              </List>
-            </Job>
-            <Job
-              title="ASTi Telestra System Integrator"
-              company="Boeing"
-              timespan={['2004', '2010']}
-            >
-              <List>
-                <li>
-                  Designed and integrated tactical radio simulation solutions
-                  for flight simulators at enterprise and government sites.
-                </li>
-                <li>
-                  Designed and fabricated cables for analog audio systems.
-                </li>
-                <li>
-                  Tested commercial products and interfaced with vendor to
-                  resolve issues.
-                </li>
-              </List>
-            </Job>
-            <Job
-              title="Tactical voice communications support"
-              company="Boeing"
-              timespan={['2004', '2014']}
-            >
-              <List>
-                <li>
-                  Worked with users to design comm plans for broadcast radio
-                  networks in operator-in-the-loop simulations.
-                </li>
-                <li>
-                  Tested communications system configuration with users prior to
-                  putting solutions into production.
-                </li>
-                <li>
-                  Provided live technical support for hardware and software
-                  installations at several sites nationwide.
-                </li>
-                <li>
-                  Maintained a limited support role as responsibilities grew to
-                  maintain close relationship with users.
                 </li>
               </List>
             </Job>
