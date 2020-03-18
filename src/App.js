@@ -37,7 +37,7 @@ const App = () => {
             <Summary>
               Kevin spent the past two years building web apps with React and
               Redux. He most recently developed a technology demonstrator for a
-              software startup.
+              software startup.{' '}
               <ScreenOnly>
                 <Link href="https://grasp-data.com/vantage/tech-demo">
                   Check it out!
