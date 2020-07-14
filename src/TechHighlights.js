@@ -81,7 +81,8 @@ const TechHighlights = () => {
           <List>
             <li>
               Evaluated maintainability and scalability of codebase derived from
-              WordPress site.
+              WordPress site, to understand the level of technical debt and
+              effort required to mitigate it.
             </li>
             <li>
               Familiarized myself with PHP and Laravel enough to maintain a
@@ -90,7 +91,7 @@ const TechHighlights = () => {
             <li>
               Encouraged adoption of tools like Storybook, ESLint, and
               PHP_CodeSniffer and their automation into a continuous integration
-              and deployment workflow.
+              and deployment workflow, to begin building a scalable team.
             </li>
           </List>
         </Job>

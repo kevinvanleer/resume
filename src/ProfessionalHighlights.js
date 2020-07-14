@@ -11,10 +11,9 @@ const ProfessionalHighlights = () => {
       <Section>
         <Flexbox flexDirection="column">
           <Summary>
-            Kevin spent the past 2 years leading product development at Conduce
-            Inc., developing a cloud deployed data visualization SaaS. He
-            diligently focused on empowering users and delivering value, while
-            managing a highly effective product development team.
+            Kevin spent the past 5 years lending expert guidance and skills to
+            software teams by promoting Agile software best practices while
+            focusing on empowering users and delivering value.
           </Summary>
         </Flexbox>
       </Section>
@@ -51,11 +50,11 @@ const ProfessionalHighlights = () => {
           <List>
             <li>
               Developed action plan to align company and ready software for
-              growth.
+              growth by listening to team and following best practices.
             </li>
             <li>
               Incorporated input from sales and marketing teams in product
-              planning and prioritization.
+              planning and prioritization to unify and align teams.
             </li>
             <li>
               Utilized Clubhouse.io and implemented Kanban workflow to enable
@@ -74,15 +73,17 @@ const ProfessionalHighlights = () => {
           <List>
             <li>
               Brought startup mentality and best practices to an enterprise
-              software team.
+              software team, challenging the status quo to improve process and
+              design.
             </li>
             <li>
               Started initiative to leverage in-house UI library reduce
               duplication and increase style consistency across apps.
             </li>
             <li>
-              Fostered team cohesion and broke down trust barriers while working
-              remotely during pandemic conditions.
+              Fostered team cohesion and broke down trust barriers by focusing
+              on communication while working remotely during pandemic
+              conditions.
             </li>
           </List>
         </Job>
