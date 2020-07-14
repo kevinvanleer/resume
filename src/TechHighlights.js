@@ -73,6 +73,53 @@ const TechHighlights = () => {
         </Job>
       </Section>
       <Section>
+        <Job
+          title="Chief Technology Officer"
+          company="Curate"
+          timespan={['June 2020', 'July 2020']}
+        >
+          <List>
+            <li>
+              Evaluated maintainability and scalability of codebase derived from
+              WordPress site.
+            </li>
+            <li>
+              Familiarized myself with PHP and Laravel enough to maintain a
+              development environment, fix bugs, and perform peer reviews.
+            </li>
+            <li>
+              Encouraged adoption of tools like Storybook, ESLint, and
+              PHP_CodeSniffer and their automation into a continuous integration
+              and deployment workflow.
+            </li>
+          </List>
+        </Job>
+      </Section>
+      <Section>
+        <Job
+          title="Senior Software Engineer"
+          company="Colaberry Inc. (Contracted to Bayer)"
+          timespan={['Mar 2020', 'Jun 2020']}
+        >
+          <List>
+            <li>
+              Stood up software development environment and began contributing
+              in a matter of hours.
+            </li>
+            <li>
+              Led effort to design and organize a Redux store, incorporating
+              team feedback to improve the design and utilize new tools for
+              reducing boilerplate and increasing productivity.
+            </li>
+            <li>
+              Developed and won team buy-in for a strategy for building,
+              maintaining, and sharing React components from multiple UI
+              frameworks.
+            </li>
+          </List>
+        </Job>
+      </Section>
+      <Section>
         <React.Fragment>
           <Job
             title="Director of Product Development"
