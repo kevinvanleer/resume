@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^2.1.1",
+    "jsvcn": "^2.2.2",
     "lodash": "^4.17.15",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -24,7 +25,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
