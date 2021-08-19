@@ -23,7 +23,7 @@ const TechHighlights = () => {
             Redux. He most recently developed a technology demonstrator for a
             startup.{' '}
             <ScreenOnly>
-              <Link href="https://grasp-data.com/vantage/tech-demo">
+              <Link href="http://grasp-data.com/vantage/tech-demo">
                 Check it out!
               </Link>
             </ScreenOnly>
