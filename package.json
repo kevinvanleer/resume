@@ -3,13 +3,14 @@
   "version": "1.1.1",
   "private": true,
   "dependencies": {
+    "color": "^4.2.3",
     "gh-pages": "^2.1.1",
     "jsvcn": "^2.2.2",
     "lodash": "^4.17.21",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-responsive": "^8.0.1",
-    "react-scripts": "3.4.4",
+    "react-scripts": "5.0.1",
     "styled-components": "^4.4.0"
   },
   "scripts": {

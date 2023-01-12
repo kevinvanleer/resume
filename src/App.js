@@ -8,7 +8,7 @@ import Button from './components/parts/Button.js';
 
 import { Document, Title, Section, Headline, Job, Degree, Heading, ScreenOnly } from './components/resume';
 
-import * as text from './text.json';
+import text from './text.json';
 import './font.css';
 
 const App = () => {
