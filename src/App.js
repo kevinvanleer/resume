@@ -6,16 +6,7 @@ import TechHighlights from './TechHighlights.js';
 import Flexbox from './components/layout/Flexbox.js';
 import Button from './components/parts/Button.js';
 
-import {
-  Document,
-  Title,
-  Section,
-  Headline,
-  Job,
-  Degree,
-  Heading,
-  ScreenOnly,
-} from './components/resume';
+import { Document, Title, Section, Headline, Job, Degree, Heading, ScreenOnly } from './components/resume';
 
 import * as text from './text.json';
 import './font.css';
@@ -25,11 +16,7 @@ const App = () => {
 
   return (
     <Document>
-      <Title
-        name={text.title}
-        email="kevin.vanleer@gmail.com"
-        phone="314-323-2294"
-      />
+      <Title name={text.title} email="kevin.vanleer@gmail.com" phone="314-323-2294" />
       <Headline>{text.headline}</Headline>
       {showTechnicalResume ? <TechHighlights /> : <ProfessionalHighlights />}
       <ScreenOnly>
@@ -51,13 +38,13 @@ const App = () => {
       </ScreenOnly>
       <Section>
         <Heading>Volunteer</Heading>
-        <Job title="Soccer coach" timespan={['2018']}>
-          Work with a great group of 2nd and 3rd grade girls. Teaching them
-          leadership and the value of teamwork and fair play.
+        <Job title="Soccer coach" timespan={['2018', '2021']}>
+          Taught, encouraged, and inspired a great group of girls from ages U6 to U12. Centered instruction the values of
+          leadership, teamwork, and fair play.
         </Job>
         <Job title="FIRST LEGO League coach" timespan={['2015', '2016']}>
-          Facilitated a team of 10 hardworking 5th (and then 6th) graders in
-          their pursuit to master the FIRST LEGO League challenge.
+          Facilitated a team of 10 hardworking 5th (and then 6th) graders in their pursuit to master the FIRST LEGO League
+          challenge.
         </Job>
       </Section>
       <Section>
