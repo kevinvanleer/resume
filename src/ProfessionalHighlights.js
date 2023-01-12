@@ -23,8 +23,16 @@ const ProfessionalHighlights = () => {
       </Section>
       <Section>
         <Job title="Independent Software Contractor" timespan={['Oct 2021']}>
-          <p>Kevin is developing a full-stack web and mobile investment application for a venture capital firm.</p>
-          <p>Kevin integrated a receipt printer and barcode scanner into an Android point-of-sale kiosk.</p>
+          <p>
+            Kevin is developing a full-stack web and mobile investment application for a venture capital firm. He assists and
+            advises the CEO, helping develop the product plan and keep execution focused on near-term goals. He also works with
+            the in-house software team to ensure new development will integrate with existing solutions.
+          </p>
+          <p>
+            Kevin integrated a receipt printer and barcode scanner into an Android point-of-sale kiosk. He helped the client
+            develop a plan that achieved the near-term goal and kept cost within budget. He delivered the solution quickly, giving
+            the client enough time to implement a customer-facing demonstration.
+          </p>
           <p>
             Kevin consulted with a software agency. His primary responsibility was to help develop leadership on software teams.
             Demonstrate how to organize and manage product backlogs and increase team velocity and software quality. Kevin also
@@ -78,8 +86,8 @@ const ProfessionalHighlights = () => {
               Incorporated input from sales and marketing teams in product planning and prioritization to unify and align teams.
             </li>
             <li>
-              Utilized Clubhouse.io and implemented Kanban workflow to enable the software team to become self-directed, increase
-              performance, and provide visibility into product priorities and execution.
+              Utilized productivity tools and implemented Kanban workflow to enable agile software development best practices,
+              increase performance, and provide visibility into product priorities and execution.
             </li>
           </List>
         </Job>
